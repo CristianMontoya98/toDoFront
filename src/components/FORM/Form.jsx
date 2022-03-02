@@ -1,6 +1,27 @@
-import React from "react";
 
-const Form = () => {
+import React,{ useState } from "react";
+
+
+const Form = ({ addTodo }) => {
+    
+    
+        const [inputValue, setInputValue] = useState("");
+
+        const handleInputChange = (e) => {
+            setInputValue(e.target.value);
+        };
+
+        const handleFormSubmit = (e) => {
+            e.preventDefault();
+
+            if (inputValue.trim() ===
+
+                "") return;
+
+            addTodo({ title: inputValue, completed: false });
+            setInputValue("");
+        };
+    
   return (
     <form className="ui form" onSubmit={handleFormSubmit}>
       <div className="ui grid center aligned">
@@ -10,7 +31,7 @@ const Form = () => {
               value={inputValue}
               onChange={handleInputChange}
               type="text"
-              placeholder="Enter something to do..."
+              placeholder="Añade una nueva tarea."
             />
           </div>
 
@@ -25,4 +46,4 @@ const Form = () => {
   );
 };
 
-export default Form 
+export default Form
