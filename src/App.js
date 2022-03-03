@@ -21,10 +21,12 @@ const  App=()=>{
 
  const removeTodo = (id) => {
 
-    const changesTodos = todoList.splice (todo => todo.id !== id);
+    const changesTodos = todoList.filter (todo => todo.id !== id);
 
     setTodoList(changesTodos);
  };
+
+ console.log(todoList)
 
   return (
     <div className="App">
