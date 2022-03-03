@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+/* import React, { useState } from 'react'; */
+import { Container } from './views/Container/container';
 
-function App() {
+
+const appTitle = "Gestor de Tareas"
+
+
+
+/* const list = [
+>>>>>>> feature/sebas
+  {id: 1,title: "tarea1 ", description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+  {id: 2,title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+  {id:3, title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+
+] */
+
+const  App=()=>{
+
+ /* const [todoList, setTodoList] = useState(list)
+
+ const addTodo = item =>{
+   setTodoList((oldList)=>[...oldList,item])
+ }
+
+ const removeTodo = (id) => {
+
+    const changesTodos = todoList.filter (todo => todo.id !== id);
+
+    setTodoList(changesTodos);
+ }; */
+
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+        {/*   <h1>{appTitle}</h1>
+    
+
+      
+        <Form addTodo={addTodo}/>
+     
+
+     
+        <Tasks removeTodoListProp={removeTodo} list={todoList} /> */}
+      <Container/>
+      
+
     </div>
+
   );
 }
 
 export default App;
+
