@@ -1,0 +1,52 @@
+.card{
+    width: 36rem;
+    padding: 1rem;
+    background-color: var(--white);
+    margin: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
+}
+.card p{
+    color: var(--green1);
+    font-size: 1.7rem;
+}
+.card h4{
+    position: relative;
+    width: 7.5rem;
+    background: var(--green1);
+    color: var(--white);
+    font-size: 1.5rem;
+    /* text-align: right; */
+    left: 77%;
+    border-radius: 5rem;
+    padding: 0.5rem;
+}
+.cardTop{
+    display: flex;
+    justify-content: space-between;
+}
+.cardTop h3{
+    width: 20rem;
+    font-size: 2rem;
+    color: var(--green1);
+    text-align: center;
+}
+
+/* .cardButton{
+    margin-left: 8rem;
+} */
+.cardButton button{
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 2rem;
+    color: var(--white);
+}
+.btnCheck{
+    background-color: var(--green1);  
+    margin-right: 0.5rem; 
+}
+.btnDelete{
+    background-color: var(--pink1);
+}
