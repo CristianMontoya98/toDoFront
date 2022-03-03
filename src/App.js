@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Form from "./components/FORM/Form";
-import List from './components/LIST/List';
-import Section from './components/SECTION/Section';
+
+
+import Tasks from './components/TASKS/Tasks';
 
 
 
@@ -9,9 +10,10 @@ import Section from './components/SECTION/Section';
 const appTitle = "Gestor de Tareas"
 
 const list = [
-  {id: 1,title: "tarea1 ", completed: false},
-  {id: 2,title:"tarea 2"},
-  {id: 3,title:"tarea 3"}
+  {id: 1,title: "tarea1 ", description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+  {id: 2,title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+  {id:3, title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
+
 ]
 
 const  App=()=>{
@@ -31,19 +33,18 @@ const  App=()=>{
 
   return (
     <div className="App">
-      <Section>
+     
           <h1>{appTitle}</h1>
-      </Section>
-
-      <Section>
-        <Form addTodo={addTodo}/>
-      </Section>
-
-      <Section>
-        <List removeTodoListProp={removeTodo} list={todoList} />
-      </Section>
+    
 
       
+        <Form addTodo={addTodo}/>
+     
+
+     
+        <Tasks removeTodoListProp={removeTodo} list={todoList} />
+      
+
     </div>
 
   );

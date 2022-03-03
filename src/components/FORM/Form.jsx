@@ -3,46 +3,34 @@ import React,{ useState } from "react";
 
 
 const Form = ({ addTodo }) => {
-    
-    
-        const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
-        const handleInputChange = (e) => {
-            setInputValue(e.target.value);
-        };
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-        const handleFormSubmit = (e) => {
-            e.preventDefault();
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
 
-            if (inputValue.trim() ===
+    if (inputValue.trim() === "") return;
 
-                "") return;
+    addTodo({ title: inputValue, completed: false });
+    setInputValue("");
+  };
 
-            addTodo({ title: inputValue, completed: false });
-            setInputValue("");
-        };
-    
   return (
-    <form className="ui form" onSubmit={handleFormSubmit}>
-      <div className="ui grid center aligned">
-        <div className="row">
-          <div className="column five wide">
-            <input
-              value={inputValue}
-              onChange={handleInputChange}
-              type="text"
-              placeholder="Añade una nueva tarea."
-            />
-          </div>
+    <div>
+      <form onSubmit={handleFormSubmit}>
+        <input
+          value={inputValue}
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Añade una nueva tarea."
+        />
 
-          <div className="column one wide">
-            <button type="submit" className="ui button circular icon green">
-              <i className="white plus icon"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
+        <button type="submit"></button>
+      </form>
+    </div>
   );
 };
 
