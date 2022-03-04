@@ -1,14 +1,24 @@
 import React, { useState } from 'react'
 import styles from "./styles.module.css"
-function AddBox() {
-
+import axios from 'axios';
+function AddBox(props) {
+  const { check, setCheck } = props;
   const [addTodoTitle, setaddTodoTitle] = useState("");
   const [addTodoDescription, setaddTodoDescription] = useState("");
   const handletitle =({target:{value}}) => setaddTodoTitle(value);
-  const handleDescription = ({target:{value}}) => setaddTodoDescription (value)
+  const handleDescription = ({ target: { value } }) => setaddTodoDescription(value);
 
-  console.log(addTodoTitle);
-  console.log(addTodoDescription);
+  const handleCreate = (event) => {
+    event.preventDefault();
+    
+    axios.post(`https://fierce-castle-95757.herokuapp.com/new`,{
+      title: addTodoTitle,
+      description:addTodoDescription
+    }).then(res => {
+      console.log(res);
+    })
+    setCheck(!check);
+  }
 
   return (
     <div className={styles.container}>
@@ -29,7 +39,7 @@ function AddBox() {
           
           />
         
-        <button type="submit" className={styles.buttonAdd}>Añadir  &#10010;</button>
+        <button onClick={handleCreate}className={styles.buttonAdd}>Añadir  &#10010;</button>
       </form>
     </div>
   );
