@@ -11,6 +11,7 @@ function NavBar() {
   const handleClickMenu = () => {
     setToggle(!toggle);
   };
+  /* Function to set the toggle state in false */
   const handleClickItem = () => {
     setToggle(false);
   };

@@ -3,8 +3,8 @@ import Cards from './components/Cards/cards'
 import styles from './styles.module.css';
 import { useState } from 'react';
 
-function Tasks() {
-    const [listTasks, setListTasks] = useState([])
+function Tasks(props) {
+    const { listTasks, setListTasks } = props;
 
     return (
         <section className={styles.tasks}>

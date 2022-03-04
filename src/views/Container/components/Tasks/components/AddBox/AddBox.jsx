@@ -8,8 +8,11 @@ function AddBox(props) {
   const [addTodoDescription, setaddTodoDescription] = useState("");
   const handletitle = ({ target: { value } }) => setaddTodoTitle(value);
   const handleDescription = ({ target: { value } }) =>
-  setaddTodoDescription(value);
-
+    setaddTodoDescription(value);
+  
+/* Function to execute the post method with axios,
+ do a request to the api and return a response that
+ add a new document in the database */
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -21,7 +24,6 @@ function AddBox(props) {
       .then((res) => {
         console.log(res);
         console.table(res.data);
-
         setListTasks((prev) => [...prev, res.data])
       })
     setaddTodoDescription('')

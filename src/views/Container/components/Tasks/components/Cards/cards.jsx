@@ -25,7 +25,9 @@ function Cards(props) {
     <>
       <h2>Tareas</h2>
       <div className={styles.containerCard}>
-        {listTasks.map((value, index) => (
+        {listTasks.map((value, index) => (value.deleted ?
+          undefined
+          :
           <Card
             key={index}
             id={value.id}

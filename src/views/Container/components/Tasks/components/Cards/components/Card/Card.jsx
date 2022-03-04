@@ -3,6 +3,10 @@ import styles from "./styles.module.css";
 function Card(props) {
   const { id, title, description, date, completed, deleted, setListTasks, listTasks } = props;
 
+  /*Function to execute the put method with axios,
+ do a request to the api and return a response that
+ update the document in the database, change the state
+ of deleted in true, then actualize the list of tasks */
   const onDeleteTodo = (id) => {
     axios.put(`https://fierce-castle-95757.herokuapp.com/api/todo/${id}`, {
         title: title,
@@ -12,10 +16,20 @@ function Card(props) {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-    });
+        setListTasks(
+          listTasks.filter((val) => {
+            return (val.id !== id && val);
+          })
+        );
+      });
+      
     console.log(id)
   }
-
+  
+/*Function to execute the put method with axios,
+ do a request to the api and return a response that
+ update the document in the database, change the state
+ of completed in true, then actualize the list of tasks */
   const onCheckTodo = (id, title, description) =>{
     axios
       .put(`https://fierce-castle-95757.herokuapp.com/api/todo/${id}`, {
