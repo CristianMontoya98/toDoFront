@@ -40,6 +40,16 @@
     width: 100%;
 }
 
+.disabled{
+    width: 35rem;
+    padding: 1rem;
+    background-color: var(--white);
+    margin: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
+    background-color: rgba(0, 0, 0, 0.212);
+}
+
 .cardButton{
     margin-left: 8rem;
     display: flex;

@@ -1,20 +1,25 @@
+import React from "react"
 import { Card } from "./components/Card/Card"
 import styles from "./styles.module.css"
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
-function Cards() {
-  const [listTasks, setListTasks] = useState([])
+function Cards(props) {
+  const {listTasks, setListTasks} = props
 
   useEffect(() => {
-    axios.get(`https://fierce-castle-95757.herokuapp.com/api/todo`).then((res) => {
-        if (res.status === 200) {
-          setListTasks(res.data)
-        }else{
-          console.log('no se hizo')
-        }
-      })
-  }, [])
+    const petition = async () =>{
+        await axios.get(`https://fierce-castle-95757.herokuapp.com/api/todo`).then((res) => {
+            if (res.status === 200) {
+              setListTasks(res.data)
+              console.log(res.data)
+            }else{
+              console.log('no se hizo')
+            }
+        })
+    }
+    petition()
+  }, [setListTasks])
 
   return (
     <>
@@ -23,16 +28,18 @@ function Cards() {
         {listTasks.map((value, index) => (
           <Card
             key={index}
-            id={value._id}
+            id={value.id}
             title={value.title}
             description={value.description}
             date={value.date}
-            state={value.state}
+            completed={value.completed}
             deleted={value.deleted}
+            listTasks={listTasks}
+            setListTasks={setListTasks}
           />
         ))}
       </div>
     </>
   )
 }
-export { Cards }
+export default React.memo(Cards)

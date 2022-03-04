@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import axios from "axios";
 
-function AddBox() {
+function AddBox(props) {
+  const {setListTasks} = props
   const [addTodoTitle, setaddTodoTitle] = useState("");
   const [addTodoDescription, setaddTodoDescription] = useState("");
   const handletitle = ({ target: { value } }) => setaddTodoTitle(value);
@@ -19,7 +20,9 @@ function AddBox() {
       })
       .then((res) => {
         console.log(res);
-        console.log(res.data);
+        console.table(res.data);
+
+        setListTasks((prev) => [...prev, res.data])
       })
     setaddTodoDescription('')
     setaddTodoTitle('')
