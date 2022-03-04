@@ -1,8 +1,11 @@
 import axios from "axios";
+import { useState } from "react";
 import styles from "./styles.module.css";
 function Card(props) {
   const { id, title, description, date, completed, deleted, setListTasks, listTasks } = props;
-
+  const [handleEdit, setHandleEdit] = useState(false); 
+  const [editTodoDescription , setEditTodoDescription] = useState("");
+  const handleEditDescription = ({ target: { value } }) => setEditTodoDescription(value);
   /*Function to execute the put method with axios,
  do a request to the api and return a response that
  update the document in the database, change the state
@@ -77,10 +80,36 @@ function Card(props) {
         );
       })
   }
+   const onEditDescription = (id) => {
+    axios.put(`https://fierce-castle-95757.herokuapp.com/api/todo/${id}`, {
+        title: title,
+        description: editTodoDescription,
+      })
+      .then((res) => {
+       
+          
+      });
+      
+    console.log(id)
+  } 
+  const onEdit = () => {
+    setHandleEdit(!handleEdit);
+    console.log(handleEdit);
+  }
 
+  const handleKey = (e) => {
+    const key = e.keyCode;
+    console.log(key);
+    if (key === 13) {
+      onEditDescription(id);
+      setHandleEdit(false);
+
+    } 
+  }
   return (
-    <div className={`${styles.card} ${deleted ? styles.cardDeleted : completed?styles.cardCompleted:styles.cardDefect}`}>
+    <div className={`${styles.card} ${deleted ? styles.cardDeleted : completed?styles.cardCompleted : styles.cardDefect}`} onDoubleClick={()=>onEdit()}>
       <div className={styles.cardTop}>
+        
         <h3>{title}</h3>
         <div className={styles.cardButton}>
           <button className={`${completed ? styles.btnCompleted : styles.btnCheck}`} onClick={() => deleted ? onRestoreTodo(id):onCheckTodo(id, title, description)}>
@@ -91,7 +120,12 @@ function Card(props) {
           </button>
         </div>
       </div>
-      <p>{description}</p>
+      {handleEdit ? <input type="text"
+        onChange={handleEditDescription}
+        value={editTodoDescription}
+        onKeyDown={handleKey}
+         />:<p>{editTodoDescription === "" ? description : editTodoDescription}</p>}
+      
       <div className={styles.date}>
         <h5>{date}</h5>
       </div>

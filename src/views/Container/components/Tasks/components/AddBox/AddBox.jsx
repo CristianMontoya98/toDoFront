@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import axios from "axios";
 
 function AddBox(props) {
-  const {setListTasks} = props
+  const {setListTasks } = props
   const [addTodoTitle, setaddTodoTitle] = useState("");
   const [addTodoDescription, setaddTodoDescription] = useState("");
   const handletitle = ({ target: { value } }) => setaddTodoTitle(value);
@@ -13,6 +13,7 @@ function AddBox(props) {
 /* Function to execute the post method with axios,
  do a request to the api and return a response that
  add a new document in the database */
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -29,6 +30,7 @@ function AddBox(props) {
     setaddTodoDescription('')
     setaddTodoTitle('')
   }
+  
 
   return (
     <div className={styles.container}>
