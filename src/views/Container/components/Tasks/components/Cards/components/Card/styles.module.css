@@ -115,3 +115,9 @@
     pointer-events: none;
     background-color: rgb(119, 195, 119);
 }
+
+@media (max-width: 320px) {
+    .card{
+        width: 27rem;
+    }
+}

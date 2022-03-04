@@ -5,13 +5,14 @@ import { Tasks } from "./components/Tasks/Tasks";
 import { TasksDeleted } from "./components/TasksDeleted/tasksDeleted";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TasksCompleted } from "./components/TasksCompleted/tasksCompleted";
+import styles from './styles.module.css'
 
 
 function Container() {
     const [listTasks, setListTasks] = useState([]);
     
     return (
-        <main>
+        <main className={styles.main}>
             <BrowserRouter>
                 <NavBar />
                 <Routes>
