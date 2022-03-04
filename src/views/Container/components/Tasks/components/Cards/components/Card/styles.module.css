@@ -12,30 +12,39 @@
     text-align: center;
 }
 .card h4{
-    position: relative;
     width: 9rem;
     background: var(--green1);
     color: var(--white);
     font-size: 1.5rem;
-    /* text-align: right; */
     left: 72%;
     border-radius: 5rem;
     padding: 0.5rem;
+    text-align: center;
 }
+
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .cardTop{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 .cardTop h3{
     width: 20rem;
     font-size: 2rem;
     color: var(--green1);
     text-align: center;
+    width: 100%;
 }
 
-/* .cardButton{
+.cardButton{
     margin-left: 8rem;
-} */
+    display: flex;
+}
+
 .cardButton button{
     width: 3.8rem;
     height: 3.8rem;
@@ -44,10 +53,19 @@
     font-size: 2rem;
     color: var(--white);
 }
+
 .btnCheck{
     background-color: var(--green1);  
-    margin-right: 0.5rem; 
+    margin-right: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btnDelete{
     background-color: var(--pink1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
