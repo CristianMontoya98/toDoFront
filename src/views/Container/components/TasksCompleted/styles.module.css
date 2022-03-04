@@ -1,18 +1,22 @@
 .completed{
     background: var(--yellow);
-    margin: 0;
-    padding-top: 15rem;
-    height: auto;
-    padding-bottom: 10rem;
-    display:flex ;
+    margin-top: 11rem;
+    min-height: 66.4vh;
+    display: flex;
     flex-direction: column;
-    position: relative;
-    z-index: 5;
-    justify-content: center;
     align-items: center;
 }
+
 .completed h2{
     text-align: center;
     font-size: 3rem;
     color: var(--green1);
+}
+
+.containerCards{
+    display: flex;
+    justify-content: center;
+    max-width: 130rem;
+    align-items: center;
+    flex-wrap: wrap;
 }

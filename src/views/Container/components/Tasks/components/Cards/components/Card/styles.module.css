@@ -1,117 +1,125 @@
-.card{
-    width: 32rem;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
+.card {
+  width: 32rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
 }
-.cardDefect{
-    background: var(--white);
-}
-.cardDeleted{
-    background: rgb(189, 31, 31);
-}
-.cardCompleted{
-    background:var(--green1);
-}
-.card p{
-    
-    font-size: 1.7rem;
-    text-align: center;
-}
-.cardDefect p{
-    color: var(--green1);
-}
-.cardDeleted p{
-    color: var(--white);
-}
-.cardCompleted p{
-    color: var(--white);
+.cardDefect {
+  background: var(--white);
 }
 
-.card h5{
-    width: 9rem;
-    background: var(--green1);
-    color: var(--white);
-    font-size: 1.5rem;
-    left: 72%;
-    border-radius: 5rem;
-    padding: 0.5rem;
-    text-align: center;
+.cardDefect h3 {
+  text-transform: capitalize;
+}
+.cardDeleted {
+  background: rgb(189, 31, 31);
+}
+.cardCompleted {
+  background: var(--green1);
+}
+.card p {
+  font-size: 1.7rem;
+  text-align: center;
+}
+.cardDefect p {
+  color: var(--green1);
+}
+.cardDeleted p {
+  color: var(--white);
+}
+.cardCompleted p {
+  color: var(--white);
 }
 
-.cardCompleted h5{
-    color: var(--green1);
-    background: var(--white);
-}
-.date{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.cardTop{
-    display: flex;
-    align-items: center;
-}
-.cardTop h3{
-    width: 20rem;
-    font-size: 2rem;
-    text-align: center;
-    width: 100%;
-}
-.cardDefect h3{
-    color: var(--green1);
-}
-.cardDeleted h3{
-    color: var(--white);
-}
-.cardCompleted h3{
-    color: var(--white);
+.card h5 {
+  width: 9rem;
+  background: var(--green1);
+  color: var(--white);
+  font-size: 1.5rem;
+  left: 72%;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
-.disabled{
-    width: 35rem;
-    padding: 1rem;
-    background-color: var(--white);
-    margin: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
-    background-color: rgba(0, 0, 0, 0.212);
+.cardCompleted h5 {
+  color: var(--green1);
+  background: var(--white);
+}
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.cardButton{
-    margin-left: 8rem;
-    display: flex;
+.cardTop {
+  display: flex;
+  align-items: center;
+}
+.cardTop h3 {
+  width: 20rem;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.cardDefect h3 {
+  color: var(--green1);
+}
+.cardDeleted h3 {
+  color: var(--white);
+}
+.cardCompleted h3 {
+  color: var(--white);
 }
 
-.cardButton button{
-    width: 3.8rem;
-    height: 3.8rem;
-    border-radius: 50%;
-    border: none;
-    font-size: 2rem;
-    color: var(--white);
+.disabled {
+  width: 35rem;
+  padding: 1rem;
+  background-color: var(--white);
+  margin: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
+  background-color: rgba(0, 0, 0, 0.212);
 }
 
-.btnCheck{
-    background-color: var(--green1);  
-    margin-right: 0.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cardButton {
+  display: flex;
 }
-.btnDelete{
-    background-color: var(--pink1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.cardButton button {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  color: var(--white);
 }
-.btnCompleted{
-    cursor: not-allowed;
-    margin-right: 0.5rem;
-    pointer-events: none;
-    background-color: rgb(119, 195, 119);
+
+.btnCheck {
+  background-color: var(--green1);
+  margin-right: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnDelete {
+  background-color: var(--pink1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnCompleted {
+  cursor: not-allowed;
+  margin-right: 0.5rem;
+  pointer-events: none;
+  background-color: rgb(119, 195, 119);
+}
+
+@media (max-width: 320px) {
+  .card {
+    width: 27rem;
+  }
 }
