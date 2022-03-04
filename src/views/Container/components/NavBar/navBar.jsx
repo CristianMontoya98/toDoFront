@@ -17,6 +17,7 @@ function NavBar() {
   };
 
   return (
+    <header>
     <nav className={styles.nav}>
       <div className={styles.nav__top}>
         <img src={logo} alt="" />
@@ -26,7 +27,8 @@ function NavBar() {
         />
       </div>
       <ItemsMenu show={toggle} handleClickItem={handleClickItem} />
-    </nav>
+      </nav>
+      </header>
   );
 }
 export { NavBar };

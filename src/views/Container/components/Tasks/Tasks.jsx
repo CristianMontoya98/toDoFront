@@ -4,13 +4,13 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 
 function Tasks(props) {
-    const { listTasks, setListTasks } = props;
+    const { listTasks, setListTasks, petition } = props;
 
     return (
         <section className={styles.tasks}>
             <h2>Gestor de tareas</h2>
             <AddBox setListTasks={setListTasks}/>
-            <Cards listTasks={listTasks} setListTasks={setListTasks}/>
+            <Cards listTasks={listTasks} setListTasks={setListTasks} petition={petition}/>
         </section>
     );
 }

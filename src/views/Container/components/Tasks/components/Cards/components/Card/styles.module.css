@@ -1,17 +1,29 @@
 .card{
     width: 32rem;
     padding: 1rem;
-    background-color: var(--white);
     margin: 1rem;
     border-radius: 2rem;
     box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
 }
+.cardDefect{
+    background-color: var(--white);
+}
+.cardDeleted{
+    background-color: rgb(189, 31, 31);
+}
 .card p{
-    color: var(--green1);
+    
     font-size: 1.7rem;
     text-align: center;
 }
-.card h4{
+.cardDefect p{
+    color: var(--green1);
+}
+.cardDeleted p{
+    color: var(--white);
+}
+
+.card h5{
     width: 9rem;
     background: var(--green1);
     color: var(--white);
@@ -21,6 +33,7 @@
     padding: 0.5rem;
     text-align: center;
 }
+
 
 .date{
     display: flex;
@@ -35,9 +48,14 @@
 .cardTop h3{
     width: 20rem;
     font-size: 2rem;
-    color: var(--green1);
     text-align: center;
     width: 100%;
+}
+.cardDefect h3{
+    color: var(--green1);
+}
+.cardDeleted h3{
+    color: var(--white);
 }
 
 .disabled{

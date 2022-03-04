@@ -44,7 +44,7 @@ function Card(props) {
   }
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${deleted ? styles.cardDeleted : styles.cardDefect}`}>
       <div className={styles.cardTop}>
         <h3>{title}</h3>
         <div className={styles.cardButton}>
@@ -58,7 +58,7 @@ function Card(props) {
       </div>
       <p>{description}</p>
       <div className={styles.date}>
-        <h4>{date}</h4>
+        <h5>{date}</h5>
       </div>
     </div>
   );
