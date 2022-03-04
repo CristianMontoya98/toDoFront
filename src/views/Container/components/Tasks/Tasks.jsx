@@ -1,33 +1,29 @@
 import { AddBox } from './components/AddBox/AddBox';
-import { Cards } from './components/Cards/cards';
+import Cards from './components/Cards/cards'
 import styles from './styles.module.css';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-function Tasks() {
+import axios from 'axios';
 
-    const [listTasks, setListTasks] = useState([]);
-    const [checkList, setCheckList] = useState(false);
-    
+function Tasks(props) {
+    const { listTasks, setListTasks } = props;
     useEffect(() => {
-        
-        const execute = async () => { await axios.get('https://fierce-castle-95757.herokuapp.com/api/todo').then(res => {
-            if (res.status === 200) {
-                console.log(res.data);
-                setListTasks(res.data);
-            }
-        })
+        const petition = async () =>{
+            await axios.get(`https://fierce-castle-95757.herokuapp.com/api/todo`).then((res) => {
+                if (res.status === 200) {
+                  setListTasks(res.data)
+                  console.log(res.data)
+                }else{
+                  console.log('no se hizo')
+                }
+            })
         }
-        execute();
-        
-
-    }, [checkList])
-    
+        petition()
+      }, [setListTasks])
     return (
         <section className={styles.tasks}>
             <h2>Gestor de tareas</h2>
-            <AddBox check={checkList} setCheck={setCheckList}/>
-            
-            <Cards listTasks={listTasks} />
+            <AddBox setListTasks={setListTasks}/>
+            <Cards listTasks={listTasks} setListTasks={setListTasks}/>
         </section>
     );
 }
