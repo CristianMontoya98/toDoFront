@@ -1,4 +1,4 @@
-![Logo](https://trello.com/1/cards/621e9ef4599de73c6ded436e/attachments/6221854b0e01ad6eaaf23156/previews/6221854b0e01ad6eaaf2316c/download/seed_plant_design_logo_%284%29.png)
+![Logo](https://i.ibb.co/cgsswjX/seed-plant-design-logo-4.png)
 
 
 # Flores del Tambo.
