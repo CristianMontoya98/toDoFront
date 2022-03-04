@@ -1,16 +1,7 @@
 /* import React, { useState } from 'react'; */
 import { Container } from './views/Container/container';
 
-<<<<<<< HEAD
-
-import Tasks from './components/TASKS/Tasks';
-
-const appTitle = "Gestor de Tareas"
-
-const list = [
-=======
 /* const list = [
->>>>>>> feature/sebas
   {id: 1,title: "tarea1 ", description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
   {id: 2,title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
   {id:3, title:"tarea 2",description:"lorem ipsum",date:"2022-10-23",state:"incompleted",deleted:false},
