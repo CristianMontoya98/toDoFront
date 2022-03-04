@@ -25,6 +25,28 @@ function Card(props) {
       
     console.log(id)
   }
+
+   /*Function to execute the put method with axios,
+ do a request to the api and return a response that
+ update the document in the database, change the state
+ of deleted in false to restore the task,
+ then actualize the list of tasks */
+  const onRestoreTodo = () => {
+    axios.put(`https://fierce-castle-95757.herokuapp.com/api/todo/${id}`, {
+        title: title,
+        description: description,
+        deleted: false
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setListTasks(
+          listTasks.filter((val) => {
+            return (val.id !== id && val);
+          })
+        );
+      });
+  }
   
 /*Function to execute the put method with axios,
  do a request to the api and return a response that
@@ -44,12 +66,12 @@ function Card(props) {
   }
 
   return (
-    <div className={`${styles.card} ${deleted ? styles.cardDeleted : styles.cardDefect}`}>
+    <div className={`${styles.card} ${deleted ? styles.cardDeleted : completed?styles.cardCompleted:styles.cardDefect}`}>
       <div className={styles.cardTop}>
         <h3>{title}</h3>
         <div className={styles.cardButton}>
-          <button className={styles.btnCheck} onClick={() => onCheckTodo(id, title, description)}>
-            <i className="fas fa-check"></i>
+          <button className={`${completed ? styles.btnCompleted : styles.btnCheck}`} onClick={() => deleted ? onRestoreTodo(id):onCheckTodo(id, title, description)}>
+            {deleted?<i className="fas fa-undo"></i>:<i className="fas fa-check"></i>}
           </button>
           <button className={styles.btnDelete} onClick={() => onDeleteTodo(id)}>
             <i className="fas fa-times"></i>

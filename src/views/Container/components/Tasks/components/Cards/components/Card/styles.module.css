@@ -6,10 +6,13 @@
     box-shadow: 0.1rem 0.5rem 1rem 0.3rem rgba(37, 37, 37, 0.63);
 }
 .cardDefect{
-    background-color: var(--white);
+    background: var(--white);
 }
 .cardDeleted{
-    background-color: rgb(189, 31, 31);
+    background: rgb(189, 31, 31);
+}
+.cardCompleted{
+    background:var(--green1);
 }
 .card p{
     
@@ -20,6 +23,9 @@
     color: var(--green1);
 }
 .cardDeleted p{
+    color: var(--white);
+}
+.cardCompleted p{
     color: var(--white);
 }
 
@@ -34,7 +40,10 @@
     text-align: center;
 }
 
-
+.cardCompleted h5{
+    color: var(--green1);
+    background: var(--white);
+}
 .date{
     display: flex;
     align-items: center;
@@ -55,6 +64,9 @@
     color: var(--green1);
 }
 .cardDeleted h3{
+    color: var(--white);
+}
+.cardCompleted h3{
     color: var(--white);
 }
 
@@ -96,4 +108,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.btnCompleted{
+    cursor: not-allowed;
+    margin-right: 0.5rem;
+    pointer-events: none;
+    background-color: rgb(119, 195, 119);
 }
