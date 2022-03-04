@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Tasks(props) {
-    const { listTasks, setListTasks } = props;
+    const { listTasks, setListTasks, handleModalOpen } = props;
     useEffect(() => {
         const petition = async () =>{
             await axios.get(`https://fierce-castle-95757.herokuapp.com/api/todo`).then((res) => {
@@ -22,7 +22,7 @@ function Tasks(props) {
     return (
         <section className={styles.tasks}>
             <h2>Gestor de tareas</h2>
-            <AddBox setListTasks={setListTasks}/>
+            <AddBox handleModalOpen={handleModalOpen} setListTasks={setListTasks}/>
             <Cards listTasks={listTasks} setListTasks={setListTasks}/>
         </section>
     );

@@ -20,6 +20,53 @@
     margin-bottom: 2rem;
 }
 
+.modal__card {
+    margin: 0 auto;
+    /* display: flex; */
+    margin-top: 30rem;
+    width: 18rem;
+    height: 14rem;
+    background-color: var(--green0);
+    border-radius: 0.6rem;
+    justify-items: center;
+    align-items: center;
+  }
+  .modal__button{
+    text-align: right;
+    padding: 0.5rem 0.5rem 0 0;
+
+}
+.modal__button button{
+    
+    background-color: var(--pink1);
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--white);
+
+}
+
+.modal__card p{
+    
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--white);
+    margin: 1rem;
+
+}
+
+.modal__background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.86);
+  }
+
 .input__description{
     border-radius: 0.5rem;
     width: 70%;
