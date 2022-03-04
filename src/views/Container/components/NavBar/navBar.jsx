@@ -20,7 +20,7 @@ function NavBar() {
     <header>
     <nav className={styles.nav}>
       <div className={styles.nav__top}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="logoFloresDelTambo" />
         <ButtonMenu
           handleClickMenu={handleClickMenu}
           iconActive={toggle ? "fas fa-times" : "fas fa-bars"}
