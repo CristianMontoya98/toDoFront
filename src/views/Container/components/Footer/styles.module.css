@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--green1);
+}
+
+.container img{
+    width: 45%;
+    height: 11.6rem;
+}
+
+.container p {
+    font-size: 14px;
+    color: var(--white);
+    width: 80%;
+    text-align: center;
+}
